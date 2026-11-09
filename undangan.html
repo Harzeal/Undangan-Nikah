@@ -208,7 +208,7 @@
         <p class="text-xs sm:text-sm text-earth">Sabtu, 21 November 2026</p>
       </div>
 
-      <!-- Hand-Drawn Sketch Frame proportioned for 9:16 CapCut Portrait Video (IMG_0782.MOV) -->
+      <!-- Hand-Drawn Sketch Frame proportioned for 9:16 CapCut Portrait Video (IMG_0782.mov) -->
       <div class="relative max-w-xs sm:max-w-sm mx-auto">
         <div class="washi-tape absolute -top-3 left-1/2 -translate-x-1/2 z-20 w-28 h-6 -rotate-2 rounded-sm"></div>
 
@@ -217,12 +217,13 @@
             <video
               id="invitationVideo"
               class="w-full h-full object-cover"
-              src="IMG_0782.MOV"
               autoplay
               playsinline
               controls
               preload="auto"
             >
+              <source src="IMG_0782.mov" type="video/mp4" />
+              <source src="IMG_0782.mov" type="video/quicktime" />
               Browser Anda tidak mendukung pemutar video HTML5.
             </video>
 
@@ -412,7 +413,7 @@
             <div class="w-10 h-px bg-clay/50 mx-auto"></div>
 
             <div class="space-y-1 text-sm">
-              <p class="font-semibold text-sepia text-base">Sabtu, 20 November 2026</p>
+              <p class="font-semibold text-sepia text-base">Jumat, 20 November 2026</p>
               <p class="text-deepBlue font-medium">Pukul 15.00 WIB – Selesai</p>
             </div>
 
@@ -697,7 +698,6 @@
         if (playAttempt !== undefined) {
           playAttempt
             .then(() => {
-              // Berhasil langsung jalan dengan suara
               videoOverlayBtn.classList.add('opacity-0', 'pointer-events-none');
               unmuteNoticeBtn.classList.add('hidden');
             })
@@ -709,7 +709,6 @@
                 unmuteNoticeBtn.classList.remove('hidden');
                 unmuteNoticeBtn.classList.add('inline-flex');
               }).catch(() => {
-                // Jika tetap butuh ketukan manual
                 videoOverlayBtn.classList.remove('opacity-0', 'pointer-events-none');
               });
             });
@@ -718,7 +717,6 @@
 
       startVideoAutoplay();
 
-      // Tombol nyalakan suara jika browser memulai video dalam keadaan muted
       unmuteNoticeBtn.addEventListener('click', () => {
         invitationVideo.muted = false;
         invitationVideo.play();
